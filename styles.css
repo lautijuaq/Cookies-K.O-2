@@ -918,3 +918,8 @@ footer {
     height: 30px;
   }
 }
+.nav-menu-item a:focus,
+.nav-menu-item button:focus {
+  outline: none;
+  box-shadow: none;
+    }
