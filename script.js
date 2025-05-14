@@ -74,7 +74,6 @@ if (contactForm) {
 
     // Obtener valores del formulario
     const nombre = document.getElementById("nombre").value
-    const email = document.getElementById("email").value
     const mensaje = document.getElementById("mensaje").value
 
     // Aquí normalmente enviarías los datos a un servidor
@@ -85,7 +84,7 @@ if (contactForm) {
     alertaExito.className = "alerta-exito"
     alertaExito.innerHTML = `
             <p>¡Gracias ${nombre}! Tu mensaje ha sido enviado correctamente.</p>
-            <p>Te responderemos a la brevedad al correo ${email}.</p>
+            <p>Te responderemos a la brevedad.</p>
         `
     alertaExito.style.backgroundColor = "#D24C49"
     alertaExito.style.color = "white"
@@ -110,16 +109,6 @@ if (contactForm) {
     }, 5000)
   })
 }
-
-// Efecto parallax en el hero
-window.addEventListener("scroll", () => {
-  const hero = document.querySelector(".hero")
-  const scrollPosition = window.pageYOffset
-
-  if (hero) {
-    hero.style.backgroundPositionY = scrollPosition * 0.5 + "px"
-  }
-})
 
 // Animación de las tarjetas de sabores
 const saborCards = document.querySelectorAll(".sabor-card")

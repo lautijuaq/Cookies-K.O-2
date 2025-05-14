@@ -50,6 +50,15 @@ ul {
   list-style: none;
 }
 
+/* Fuente personalizada Doughy */
+@font-face {
+  font-family: "Doughy";
+  src: url("fonts/doughy.woff2") format("woff2"), url("fonts/doughy.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 .section-title {
   text-align: center;
   font-size: 2.5rem;
@@ -57,7 +66,7 @@ ul {
   color: var(--dark);
   position: relative;
   padding-bottom: 1rem;
-  font-family: "Doughty", "Poppins", sans-serif;
+  font-family: "Doughy", sans-serif;
 }
 
 .section-title::after {
@@ -104,14 +113,13 @@ ul {
   color: var(--light-text);
   font-weight: bold;
   font-size: 18px;
-  box-shadow: var(--shadow);
 }
 
 .logo h1 {
   font-size: 1.8rem;
   color: var(--primary);
   font-weight: 700;
-  font-family: "Doughty", "Poppins", sans-serif;
+  font-family: "Doughy", sans-serif;
 }
 
 .nav-menu {
@@ -237,13 +245,12 @@ ul {
     color: var(--light-text);
     font-weight: bold;
     font-size: 18px;
-    box-shadow: var(--shadow);
   }
 
   .nav-menu-logo h2 {
     font-size: 1.5rem;
     color: var(--primary);
-    font-family: "Doughty", "Poppins", sans-serif;
+    font-family: "Doughy", sans-serif;
   }
 
   .nav-menu-items {
@@ -286,86 +293,10 @@ ul {
     font-size: 1.1rem;
     display: block;
     width: 100%;
-    font-family: "Poppins", sans-serif;
   }
 
   .nav-link::after {
     display: none;
-  }
-
-  /* Testimonios en el menú */
-  .menu-testimonios {
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-  }
-
-  .menu-testimonios-title {
-    font-size: 1.3rem;
-    color: var(--dark);
-    margin-bottom: 1rem;
-    text-align: center;
-    font-family: "Doughty", "Poppins", sans-serif;
-  }
-
-  .menu-testimonio-card {
-    background-color: white;
-    border-radius: var(--border-radius);
-    padding: 1.5rem;
-    box-shadow: var(--shadow);
-    margin-bottom: 1rem;
-    transition: var(--transition);
-  }
-
-  .menu-testimonio-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  }
-
-  .menu-testimonio-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-
-  .menu-testimonio-image {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-right: 1rem;
-    border: 2px solid var(--primary);
-  }
-
-  .menu-testimonio-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .menu-testimonio-info h4 {
-    font-size: 1rem;
-    color: var(--dark);
-    margin-bottom: 0.2rem;
-  }
-
-  .menu-testimonio-rol {
-    font-size: 0.8rem;
-    color: var(--primary);
-  }
-
-  .menu-testimonio-texto {
-    font-size: 0.9rem;
-    font-style: italic;
-    color: var(--dark-text);
-  }
-
-  .menu-footer {
-    text-align: center;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    color: var(--dark-text);
-    opacity: 0.7;
   }
 }
 
@@ -391,7 +322,7 @@ ul {
   font-size: 3.5rem;
   margin-bottom: 1rem;
   animation: fadeInDown 1s ease;
-  font-family: "Doughty", "Poppins", sans-serif;
+  font-family: "Doughy", sans-serif;
 }
 
 .hero-subtitle {
@@ -406,7 +337,7 @@ ul {
   margin-bottom: 2rem;
   animation: fadeInUp 1s ease 0.5s forwards;
   opacity: 0;
-  font-family: "Doughty", "Poppins", sans-serif;
+  font-family: "Doughy", sans-serif;
 }
 
 .hero-emoji {
@@ -520,7 +451,7 @@ ul {
 .sabor-card h3 {
   margin: 1rem 0 0.5rem;
   color: var(--primary);
-  font-family: "Doughty", "Poppins", sans-serif;
+  font-family: "Doughy", sans-serif;
   font-size: 1.5rem;
 }
 
@@ -586,31 +517,13 @@ ul {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   color: var(--dark);
-  font-family: "Doughty", "Poppins", sans-serif;
+  font-family: "Doughy", sans-serif;
 }
 
 .encargos-info p {
   margin-bottom: 1.5rem;
   line-height: 1.8;
-}
-
-.encargos-info ul {
-  margin-bottom: 1.5rem;
-}
-
-.encargos-info li {
-  margin-bottom: 0.8rem;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.encargos-info li::before {
-  content: "•";
-  color: var(--primary);
-  font-size: 1.5rem;
-  position: absolute;
-  left: 0;
-  top: -5px;
+  font-size: 1.1rem;
 }
 
 .encargos-cta {
@@ -689,10 +602,6 @@ ul {
   display: flex;
   align-items: center;
   margin-top: 1rem;
-}
-
-.testimonio-emoji {
-  margin-right: 0.5rem;
 }
 
 .testimonio-nombre {
@@ -834,7 +743,7 @@ footer {
 .footer-logo h2 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
-  font-family: "Doughty", "Poppins", sans-serif;
+  font-family: "Doughy", sans-serif;
 }
 
 .footer-links h3,
@@ -843,7 +752,7 @@ footer {
   margin-bottom: 1rem;
   position: relative;
   padding-bottom: 0.5rem;
-  font-family: "Doughty", "Poppins", sans-serif;
+  font-family: "Doughy", sans-serif;
 }
 
 .footer-links h3::after,
@@ -1008,12 +917,4 @@ footer {
     width: 30px;
     height: 30px;
   }
-}
-
-/* Fuente personalizada Doughty (simulada) */
-@font-face {
-  font-family: "Doughty";
-  src: url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
-  font-weight: normal;
-  font-style: normal;
 }
