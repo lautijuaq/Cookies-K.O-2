@@ -70,72 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
 const contactForm = document.getElementById("contactForm")
 if (contactForm) {
   contactForm.addEventListener("submit", (e) => {
-    e.preventDefault()
-
-    // Obtener valores del formulario
-    const nombre = document.getElementById("nombre").value
-    const mensaje = document.getElementById("mensaje").value
-
-    // Aquí normalmente enviarías los datos a un servidor
-    // Por ahora, solo mostraremos un mensaje de éxito
-
-    // Crear elemento de alerta
-    const alertaExito = document.createElement("div")
-    alertaExito.className = "alerta-exito"
-    alertaExito.innerHTML = `
-            <p>¡Gracias ${nombre}! Tu mensaje ha sido enviado correctamente.</p>
-            <p>Te responderemos a la brevedad.</p>
-        `
-    alertaExito.style.backgroundColor = "#D24C49"
-    alertaExito.style.color = "white"
-    alertaExito.style.padding = "1rem"
-    alertaExito.style.borderRadius = "5px"
-    alertaExito.style.marginTop = "1rem"
-
-    // Insertar alerta después del formulario
-    contactForm.after(alertaExito)
-
-    // Resetear formulario
-    contactForm.reset()
-
-    // Eliminar alerta después de 5 segundos
-    setTimeout(() => {
-      alertaExito.style.opacity = "0"
-      alertaExito.style.transition = "opacity 0.5s ease"
-
-      setTimeout(() => {
-        alertaExito.remove()
-      }, 500)
-    }, 5000)
+    // El formulario se enviará a Formspree
+    // No es necesario prevenir el comportamiento predeterminado
+    // ya que queremos que el formulario se envíe
   })
 }
-
-// Animación de las tarjetas de sabores
-const saborCards = document.querySelectorAll(".sabor-card")
-saborCards.forEach((card, index) => {
-  card.style.opacity = "0"
-  card.style.transform = "translateY(30px)"
-  card.style.transition = "opacity 0.6s ease, transform 0.6s ease"
-  card.style.transitionDelay = `${index * 0.1}s`
-
-  observer.observe(card)
-})
-
-// Animación de las tarjetas de testimonios
-const testimonioCards = document.querySelectorAll(".testimonio-card")
-testimonioCards.forEach((card, index) => {
-  card.style.opacity = "0"
-  card.style.transform = "translateY(30px)"
-  card.style.transition = "opacity 0.6s ease, transform 0.6s ease"
-  card.style.transitionDelay = `${index * 0.1}s`
-
-  observer.observe(card)
-})
-
-// Añadir clase animate cuando los elementos son visibles
-document.addEventListener("scroll", () => {
-  document.querySelectorAll(".animate").forEach((el) => {
-    el.style.opacity = "1"
-    el.style.transform = "translateY(0)"
-  })
-})

@@ -1,3 +1,14 @@
+/* Fuentes personalizadas */
+@font-face {
+  font-family: "Doughy";
+  src: url("/fonts/Doughy.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Baloo";
+  src: url("/fonts/Baloo-Regular.ttf") format("truetype");
+}
+
 /* Variables y Reset */
 :root {
   --primary: #d24c49;
@@ -15,6 +26,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -22,7 +34,7 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Baloo", sans-serif;
   line-height: 1.6;
   color: var(--dark-text);
   background-color: var(--light);
@@ -50,13 +62,11 @@ ul {
   list-style: none;
 }
 
-/* Fuente personalizada Doughy */
-@font-face {
-  font-family: "Doughy";
-  src: url("fonts/doughy.woff2") format("woff2"), url("fonts/doughy.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+button,
+input,
+textarea {
+  outline: none;
+  font-family: "Baloo", sans-serif;
 }
 
 .section-title {
@@ -113,6 +123,7 @@ ul {
   color: var(--light-text);
   font-weight: bold;
   font-size: 18px;
+  box-shadow: var(--shadow);
 }
 
 .logo h1 {
@@ -245,6 +256,7 @@ ul {
     color: var(--light-text);
     font-weight: bold;
     font-size: 18px;
+    box-shadow: var(--shadow);
   }
 
   .nav-menu-logo h2 {
@@ -298,6 +310,14 @@ ul {
   .nav-link::after {
     display: none;
   }
+
+  .menu-footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--dark-text);
+    opacity: 0.7;
+  }
 }
 
 /* Hero Section */
@@ -327,22 +347,10 @@ ul {
 
 .hero-subtitle {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   animation: fadeInUp 1s ease 0.3s forwards;
   opacity: 0;
-}
-
-.hero-welcome {
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
-  animation: fadeInUp 1s ease 0.5s forwards;
-  opacity: 0;
-  font-family: "Doughy", sans-serif;
-}
-
-.hero-emoji {
-  display: inline-block;
-  animation: pulse 2s infinite;
+  font-family: "Baloo", sans-serif;
 }
 
 .cta-button {
@@ -383,11 +391,6 @@ ul {
   margin-bottom: 1rem;
   font-size: 1.1rem;
   line-height: 1.8;
-}
-
-.historia-highlight {
-  color: var(--primary);
-  font-weight: 600;
 }
 
 .historia-image {
@@ -513,13 +516,6 @@ ul {
   flex: 1;
 }
 
-.encargos-info h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: var(--dark);
-  font-family: "Doughy", sans-serif;
-}
-
 .encargos-info p {
   margin-bottom: 1.5rem;
   line-height: 1.8;
@@ -625,12 +621,6 @@ ul {
   flex: 1;
 }
 
-.contacto-info p {
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-  line-height: 1.8;
-}
-
 .contacto-metodos {
   margin-top: 2rem;
 }
@@ -668,6 +658,7 @@ ul {
   font-size: 1.2rem;
   color: var(--dark);
   margin-bottom: 0.3rem;
+  font-family: "Doughy", sans-serif;
 }
 
 .contacto-detalles p {
@@ -699,7 +690,7 @@ ul {
   padding: 0.8rem;
   border: 1px solid #ddd;
   border-radius: 5px;
-  font-family: inherit;
+  font-family: "Baloo", sans-serif;
   transition: var(--transition);
 }
 
@@ -720,6 +711,7 @@ ul {
   font-weight: 600;
   transition: var(--transition);
   width: 100%;
+  font-family: "Baloo", sans-serif;
 }
 
 .submit-button:hover {
@@ -789,41 +781,6 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* WhatsApp Flotante */
-.whatsapp-float {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 999;
-}
-
-.whatsapp-float a {
-  display: flex;
-  align-items: center;
-  background-color: #25d366;
-  color: white;
-  border-radius: 50px;
-  padding: 10px 20px 10px 10px;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-  transition: var(--transition);
-}
-
-.whatsapp-float a:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-}
-
-.whatsapp-icon {
-  width: 40px;
-  height: 40px;
-  fill: white;
-  margin-right: 10px;
-}
-
-.whatsapp-float span {
-  font-weight: 600;
-}
-
 /* Animaciones */
 @keyframes fadeInDown {
   from {
@@ -844,18 +801,6 @@ footer {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
   }
 }
 
@@ -903,31 +848,4 @@ footer {
   .cta-button {
     padding: 0.8rem 1.5rem;
   }
-
-  .whatsapp-float {
-    bottom: 20px;
-    right: 20px;
-  }
-
-  .whatsapp-float a {
-    padding: 8px 15px 8px 8px;
-  }
-
-  .whatsapp-icon {
-    width: 30px;
-    height: 30px;
-  }
-}
-
-/* Evitar borde azul en mobile al hacer clic en menú */
-.nav-link:focus,
-.nav-menu-item:focus,
-.nav-menu-item a:focus,
-.nav-menu-item button:focus {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-* {
-  -webkit-tap-highlight-color: transparent;
 }
