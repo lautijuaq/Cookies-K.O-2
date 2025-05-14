@@ -918,8 +918,16 @@ footer {
     height: 30px;
   }
 }
+
+/* Evitar borde azul en mobile al hacer clic en menú */
+.nav-link:focus,
+.nav-menu-item:focus,
 .nav-menu-item a:focus,
 .nav-menu-item button:focus {
-  outline: none;
-  box-shadow: none;
-    }
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
