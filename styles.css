@@ -7,7 +7,7 @@
   --dark-text: #333333;
   --light-text: #ffffff;
   --transition: all 0.3s ease;
-  --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   --border-radius: 12px;
 }
 
@@ -57,6 +57,7 @@ ul {
   color: var(--dark);
   position: relative;
   padding-bottom: 1rem;
+  font-family: "Doughty", "Poppins", sans-serif;
 }
 
 .section-title::after {
@@ -103,12 +104,14 @@ ul {
   color: var(--light-text);
   font-weight: bold;
   font-size: 18px;
+  box-shadow: var(--shadow);
 }
 
 .logo h1 {
   font-size: 1.8rem;
   color: var(--primary);
   font-weight: 700;
+  font-family: "Doughty", "Poppins", sans-serif;
 }
 
 .nav-menu {
@@ -145,32 +148,45 @@ ul {
   width: 100%;
 }
 
+/* Menú hamburguesa mejorado */
 .menu-toggle {
-  display: none;
-  cursor: pointer;
-  z-index: 1001;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background-color: var(--light);
-  display: flex;
-  flex-direction: column;
+  display: none;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   box-shadow: var(--shadow);
+  position: relative;
+  z-index: 1001;
+  border: 2px solid rgba(210, 76, 73, 0.1);
 }
 
 .menu-toggle .bar {
   display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
+  width: 22px;
+  height: 2px;
+  margin: 4px auto;
   background-color: var(--primary);
   transition: var(--transition);
   border-radius: 3px;
+  position: absolute;
 }
 
-/* Menú móvil mejorado */
+.menu-toggle .bar:nth-child(1) {
+  top: 14px;
+}
+
+.menu-toggle .bar:nth-child(2) {
+  top: 21px;
+}
+
+.menu-toggle .bar:nth-child(3) {
+  top: 28px;
+}
+
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
@@ -221,11 +237,13 @@ ul {
     color: var(--light-text);
     font-weight: bold;
     font-size: 18px;
+    box-shadow: var(--shadow);
   }
 
   .nav-menu-logo h2 {
     font-size: 1.5rem;
     color: var(--primary);
+    font-family: "Doughty", "Poppins", sans-serif;
   }
 
   .nav-menu-items {
@@ -268,6 +286,7 @@ ul {
     font-size: 1.1rem;
     display: block;
     width: 100%;
+    font-family: "Poppins", sans-serif;
   }
 
   .nav-link::after {
@@ -286,6 +305,7 @@ ul {
     color: var(--dark);
     margin-bottom: 1rem;
     text-align: center;
+    font-family: "Doughty", "Poppins", sans-serif;
   }
 
   .menu-testimonio-card {
@@ -371,13 +391,27 @@ ul {
   font-size: 3.5rem;
   margin-bottom: 1rem;
   animation: fadeInDown 1s ease;
+  font-family: "Doughty", "Poppins", sans-serif;
 }
 
 .hero-subtitle {
   font-size: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   animation: fadeInUp 1s ease 0.3s forwards;
   opacity: 0;
+}
+
+.hero-welcome {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease 0.5s forwards;
+  opacity: 0;
+  font-family: "Doughty", "Poppins", sans-serif;
+}
+
+.hero-emoji {
+  display: inline-block;
+  animation: pulse 2s infinite;
 }
 
 .cta-button {
@@ -417,13 +451,19 @@ ul {
 .historia-text p {
   margin-bottom: 1rem;
   font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.historia-highlight {
+  color: var(--primary);
+  font-weight: 600;
 }
 
 .historia-image {
   flex: 1;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
   transition: var(--transition);
 }
 
@@ -446,12 +486,13 @@ ul {
 
 .sabor-card {
   background-color: white;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow);
   transition: var(--transition);
   text-align: center;
   padding-bottom: 1.5rem;
+  position: relative;
 }
 
 .sabor-card:hover {
@@ -462,6 +503,7 @@ ul {
 .sabor-image {
   overflow: hidden;
   height: 200px;
+  position: relative;
 }
 
 .sabor-image img {
@@ -478,11 +520,50 @@ ul {
 .sabor-card h3 {
   margin: 1rem 0 0.5rem;
   color: var(--primary);
+  font-family: "Doughty", "Poppins", sans-serif;
+  font-size: 1.5rem;
 }
 
 .sabor-card p {
   padding: 0 1rem;
   color: var(--dark-text);
+}
+
+.sabor-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--primary);
+  color: var(--light-text);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: var(--shadow);
+}
+
+/* Colores temáticos para cada sabor */
+.sabor-red-velvet {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 70%, rgba(210, 76, 73, 0.1) 100%);
+}
+
+.sabor-oreo {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 70%, rgba(51, 51, 51, 0.1) 100%);
+}
+
+.sabor-limon {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 70%, rgba(220, 220, 60, 0.1) 100%);
+}
+
+.sabor-brownie {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 70%, rgba(101, 67, 33, 0.1) 100%);
+}
+
+.sabor-chips {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 70%, rgba(238, 200, 163, 0.2) 100%);
 }
 
 /* Encargos Personalizados */
@@ -505,6 +586,12 @@ ul {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   color: var(--dark);
+  font-family: "Doughty", "Poppins", sans-serif;
+}
+
+.encargos-info p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
 }
 
 .encargos-info ul {
@@ -526,15 +613,33 @@ ul {
   top: -5px;
 }
 
-.encargos-info p {
-  margin-bottom: 1.5rem;
+.encargos-cta {
+  display: inline-block;
+  background-color: var(--primary);
+  color: var(--light-text);
+  padding: 1.2rem 2.5rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: var(--transition);
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(210, 76, 73, 0.3);
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.encargos-cta:hover {
+  background-color: var(--dark);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(147, 26, 35, 0.4);
 }
 
 .encargos-image {
   flex: 1;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
 }
 
 /* Testimonios */
@@ -545,17 +650,17 @@ ul {
 
 .testimonios-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
 .testimonio-card {
   background-color: white;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   padding: 2rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow);
   transition: var(--transition);
-  text-align: center;
+  position: relative;
 }
 
 .testimonio-card:hover {
@@ -563,38 +668,39 @@ ul {
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-.testimonio-image {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto 1rem;
-  border: 3px solid var(--primary);
-}
-
-.testimonio-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.testimonio-card h3 {
-  margin-bottom: 0.3rem;
-  color: var(--dark);
-}
-
-.testimonio-rol {
+.testimonio-quote {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  font-size: 3rem;
   color: var(--primary);
-  font-weight: 500;
-  margin-bottom: 1rem;
+  opacity: 0.2;
 }
 
 .testimonio-texto {
   font-style: italic;
   color: var(--dark-text);
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-/* Formulario de Contacto */
+.testimonio-autor {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.testimonio-emoji {
+  margin-right: 0.5rem;
+}
+
+.testimonio-nombre {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+/* Contacto */
 .contacto {
   padding: 5rem 0;
   background-color: #fff;
@@ -603,6 +709,7 @@ ul {
 .contacto-content {
   display: flex;
   gap: 3rem;
+  align-items: flex-start;
 }
 
 .contacto-info {
@@ -610,21 +717,61 @@ ul {
 }
 
 .contacto-info p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-size: 1.1rem;
+  line-height: 1.8;
 }
 
-.contacto-recordatorio {
-  font-weight: 500;
-  color: var(--primary);
+.contacto-metodos {
+  margin-top: 2rem;
+}
+
+.contacto-metodo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: var(--light);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.contacto-metodo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.contacto-icon {
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  color: var(--light-text);
+  font-size: 1.5rem;
+}
+
+.contacto-detalles h3 {
+  font-size: 1.2rem;
+  color: var(--dark);
+  margin-bottom: 0.3rem;
+}
+
+.contacto-detalles p {
+  margin: 0;
+  font-size: 1rem;
 }
 
 .contacto-form {
   flex: 1;
   background-color: var(--light);
   padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
 }
 
 .form-group {
@@ -687,6 +834,7 @@ footer {
 .footer-logo h2 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
+  font-family: "Doughty", "Poppins", sans-serif;
 }
 
 .footer-links h3,
@@ -695,6 +843,7 @@ footer {
   margin-bottom: 1rem;
   position: relative;
   padding-bottom: 0.5rem;
+  font-family: "Doughty", "Poppins", sans-serif;
 }
 
 .footer-links h3::after,
@@ -789,6 +938,18 @@ footer {
   }
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /* Media Queries */
 @media (max-width: 992px) {
   .historia-content,
@@ -809,7 +970,7 @@ footer {
 
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block;
+    display: flex;
   }
 
   .hero-title {
@@ -847,4 +1008,12 @@ footer {
     width: 30px;
     height: 30px;
   }
+}
+
+/* Fuente personalizada Doughty (simulada) */
+@font-face {
+  font-family: "Doughty";
+  src: url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+  font-weight: normal;
+  font-style: normal;
 }
