@@ -5,12 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookies K.O - Lo artesanal hecho cookie</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Solución alternativa: Cargar fuentes desde Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Baloo+2:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -89,7 +83,7 @@
                     <p>Cookies K.O nació de una tarde de horno, risas y recetas heredadas. Desde entonces, cada cookie que hacemos es una mezcla de cariño, sabor y detalles únicos. Nos mueve el deseo de compartir momentos dulces con vos.</p>
                 </div>
                 <div class="historia-image">
-                    <img src="/placeholder.svg?height=400&width=600" alt="Cookies artesanales">
+                    <div style="width: 100%; height: 300px; background-color: var(--secondary); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--dark-text); font-size: 1.2rem;">Imagen de cookies artesanales</div>
                 </div>
             </div>
         </div>
@@ -102,7 +96,7 @@
             <div class="sabores-grid">
                 <div class="sabor-card sabor-red-velvet">
                     <div class="sabor-image">
-                        <img src="/placeholder.svg?height=300&width=300" alt="Galletas Red Velvet">
+                        <div style="width: 100%; height: 200px; background-color: #ffcccb; display: flex; align-items: center; justify-content: center; color: var(--dark-text);">Red Velvet</div>
                         <div class="sabor-icon">
                             <i class="fas fa-heart"></i>
                         </div>
@@ -112,7 +106,7 @@
                 </div>
                 <div class="sabor-card sabor-oreo">
                     <div class="sabor-image">
-                        <img src="/placeholder.svg?height=300&width=300" alt="Galletas Oreo">
+                        <div style="width: 100%; height: 200px; background-color: #333; display: flex; align-items: center; justify-content: center; color: white;">Oreo</div>
                         <div class="sabor-icon">
                             <i class="fas fa-cookie"></i>
                         </div>
@@ -122,7 +116,7 @@
                 </div>
                 <div class="sabor-card sabor-limon">
                     <div class="sabor-image">
-                        <img src="/placeholder.svg?height=300&width=300" alt="Galletas Limón">
+                        <div style="width: 100%; height: 200px; background-color: #ffffcc; display: flex; align-items: center; justify-content: center; color: var(--dark-text);">Limón</div>
                         <div class="sabor-icon">
                             <i class="fas fa-lemon"></i>
                         </div>
@@ -132,7 +126,7 @@
                 </div>
                 <div class="sabor-card sabor-brownie">
                     <div class="sabor-image">
-                        <img src="/placeholder.svg?height=300&width=300" alt="Galletas Brownie">
+                        <div style="width: 100%; height: 200px; background-color: #8b4513; display: flex; align-items: center; justify-content: center; color: white;">Brownie</div>
                         <div class="sabor-icon">
                             <i class="fas fa-square"></i>
                         </div>
@@ -142,7 +136,7 @@
                 </div>
                 <div class="sabor-card sabor-chips">
                     <div class="sabor-image">
-                        <img src="/placeholder.svg?height=300&width=300" alt="Galletas Chips">
+                        <div style="width: 100%; height: 200px; background-color: var(--secondary); display: flex; align-items: center; justify-content: center; color: var(--dark-text);">Chips</div>
                         <div class="sabor-icon">
                             <i class="fas fa-cookie-bite"></i>
                         </div>
@@ -166,7 +160,7 @@
                     </a>
                 </div>
                 <div class="encargos-image">
-                    <img src="/placeholder.svg?height=400&width=600" alt="Galletas personalizadas">
+                    <div style="width: 100%; height: 300px; background-color: var(--secondary); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--dark-text); font-size: 1.2rem;">Galletas personalizadas</div>
                 </div>
             </div>
         </div>
@@ -281,6 +275,42 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // JavaScript simplificado para debugging
+        const mobileMenu = document.getElementById("mobile-menu")
+        const navMenu = document.querySelector(".nav-menu")
+
+        if (mobileMenu && navMenu) {
+            mobileMenu.addEventListener("click", function () {
+                this.classList.toggle("active")
+                navMenu.classList.toggle("active")
+
+                const bars = document.querySelectorAll(".bar")
+                if (navMenu.classList.contains("active")) {
+                    bars[0].style.transform = "rotate(-45deg) translate(-5px, 6px)"
+                    bars[1].style.opacity = "0"
+                    bars[2].style.transform = "rotate(45deg) translate(-5px, -6px)"
+                } else {
+                    bars[0].style.transform = "rotate(0)"
+                    bars[1].style.opacity = "1"
+                    bars[2].style.transform = "rotate(0)"
+                }
+            })
+
+            // Cerrar menú al hacer clic en un enlace
+            const navLinks = document.querySelectorAll(".nav-link")
+            navLinks.forEach((link) => {
+                link.addEventListener("click", () => {
+                    navMenu.classList.remove("active")
+                    mobileMenu.classList.remove("active")
+
+                    const bars = document.querySelectorAll(".bar")
+                    bars[0].style.transform = "rotate(0)"
+                    bars[1].style.opacity = "1"
+                    bars[2].style.transform = "rotate(0)"
+                })
+            })
+        }
+    </script>
 </body>
 </html>
