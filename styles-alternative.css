@@ -1,0 +1,36 @@
+/* Variables y Reset */
+:root {
+  --primary: #d24c49;
+  --secondary: #eec8a3;
+  --dark: #931a23;
+  --light: #fff5eb;
+  --dark-text: #333333;
+  --light-text: #ffffff;
+  --transition: all 0.3s ease;
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  --border-radius: 12px;
+
+  /* Fuentes alternativas */
+  --font-titles: "Fredoka", sans-serif;
+  --font-body: "Baloo 2", sans-serif;
+}
+
+/* Resto del CSS */
+body {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--dark-text);
+  background-color: var(--light);
+}
+
+.section-title {
+  font-family: var(--font-titles);
+  /* resto de propiedades igual */
+}
+
+.logo h1 {
+  font-family: var(--font-titles);
+  /* resto de propiedades igual */
+}
+
+/* Actualizar todas las demás referencias a las fuentes */

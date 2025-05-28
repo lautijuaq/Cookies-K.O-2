@@ -1,12 +1,16 @@
-/* Fuentes personalizadas */
+/* Fuentes personalizadas - Rutas corregidas */
 @font-face {
   font-family: "Doughy";
-  src: url("/fonts/Doughy.otf") format("opentype");
+  src: url("../fonts/Doughy.otf") format("opentype"), url("./fonts/Doughy.otf") format("opentype"),
+    url("fonts/Doughy.otf") format("opentype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Baloo";
-  src: url("/fonts/Baloo-Regular.ttf") format("truetype");
+  src: url("../fonts/Baloo-Regular.ttf") format("truetype"), url("./fonts/Baloo-Regular.ttf") format("truetype"),
+    url("fonts/Baloo-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 /* Variables y Reset */
