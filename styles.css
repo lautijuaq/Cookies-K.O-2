@@ -865,3 +865,7 @@ footer {
 .logo-img:hover {
     transform: scale(1.05);
 }
+.logo-img {
+    background: none !important; /* Elimina cualquier fondo */
+    border: none !important;     /* Elimina cualquier borde */
+}
