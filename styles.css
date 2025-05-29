@@ -117,16 +117,17 @@ textarea {
 .logo-placeholder {
   width: 40px;
   height: 40px;
-  background-color: var(--primary);
-  border-radius: 0;
+  background-color: transparent;  /* Quitamos el color de fondo */
+  border-radius: 0;               /* Quitamos la forma circular */
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--light-text);
   font-weight: bold;
   font-size: 18px;
-  box-shadow: none(--shadow);
+  box-shadow: none;               /* Correcto: esto desactiva la sombra */
 }
+
 
 .logo h1 {
   font-size: 1.8rem;
