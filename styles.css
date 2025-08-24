@@ -912,15 +912,16 @@ footer {
 .hero::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: -20px;   /* expande un poco para que el blur no se corte */
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
               url("images/fondo.jpg") no-repeat center center / cover;
-  filter: blur(12px);
+  filter: blur(6px); /* ajustá el número: 8px suave, 20px fuerte */
   z-index: 1;
 }
+
 
 /* Texto por encima */
 .hero-content {
