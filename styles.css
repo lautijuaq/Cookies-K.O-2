@@ -871,3 +871,17 @@ footer {
     background: none !important; /* Elimina cualquier fondo */
     border: none !important;     /* Elimina cualquier borde */
 }
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .cta-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
